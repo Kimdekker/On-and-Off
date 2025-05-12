@@ -28,6 +28,8 @@
   --shadow-clr: 56, 53, 19;
 
   --shadow-opacity: 0.6;
+
+  --pre-clr: #ebebd3;
 }
 
 /**********************************/
@@ -140,7 +142,15 @@ input:checked + span:before {
 
 
 pre{
+  bottom: 0;
+  position: absolute;
+  color: var(--pre-clr);
   margin: 5em;
   line-height: normal;
   font-family: sans-serif;
 }
+
+
+
+
+
