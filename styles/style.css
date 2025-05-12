@@ -42,6 +42,8 @@ body:has([value="lightDark"]:checked) {
   --accent-clr: #ebebd3;
   --shadow-clr: 102, 102, 1;
   --shadow-opacity: 1;
+  --pre-clr: #ebebd3;
+
 }
 
 body {
@@ -73,6 +75,7 @@ label {
   display: inline-block;
   width: 2.4em;
   height: 1.4em;
+  z-index: 1;
 }
 
 label label {
@@ -148,6 +151,7 @@ pre{
   margin: 5em;
   line-height: normal;
   font-family: sans-serif;
+  z-index: 0;
 }
 
 
