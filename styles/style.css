@@ -45,6 +45,7 @@ body:has([value="lightDark"]:checked) {
 body {
   background-color: var(--bg-clr);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
@@ -135,4 +136,11 @@ input:checked + span {
 
 input:checked + span:before {
   transform: translateX(1em);
+}
+
+
+pre{
+  margin: 5em;
+  line-height: normal;
+  font-family: sans-serif;
 }
