@@ -1,0 +1,167 @@
+/**************/
+/* CSS REMEDY */
+/**************/
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+:root {
+  /* Font families */
+  --ff: monospace;
+
+  /* Font weights */
+  --fw-n: 400;
+
+  /* Line height */
+  --lh: 1em;
+
+  /* Color scheme */
+  --primary-clr: #F5D547;
+  --sec-clr: #1446A0;
+  --bg-clr: #EBEBD3; 
+  --acent-clr: #3C3C3B;
+  --txt-clr: #171716;
+  --shadow-clr: 56, 53, 19;
+
+  --shadow-opacity: .6;
+}
+
+
+/**********************************/
+/* MEDIA QUERIES DARK/LIGHT THEMES*/
+/**********************************/
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --txt-clr: #f0f0e7;
+    --bg-clr: #3C3C3B; 
+    --acent-clr: #EBEBD3;
+    --shadow-clr: 102,102,1;
+    --shadow-opacity: 1;
+  }
+}
+
+
+body:has( [value="lightDark"]:checked ) {
+    --txt-clr: #f0f0e7;
+    --bg-clr: #3C3C3B; 
+    --acent-clr: #EBEBD3;
+    --shadow-clr: 102,102,1;
+    --shadow-opacity: 1;
+}
+
+body {
+  background-color: var(--bg-clr);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+
+
+/***************/
+/* TYPOGRAPHY */
+/*************/
+
+body {
+  font-family: var(--ff);
+  font-weight: var(--fw-n);
+  line-height: var(--lh);
+  color: var(--txt-clr);
+}
+
+
+
+/*****************************/
+/* DARK/LIGHT TOGGLE SWITCH */
+/***************************/
+
+
+label {
+  position: relative;
+  display: inline-block;
+  width: 2.4em;
+  height: 1.4em;
+}
+
+label label{
+  height: max-content;
+  width: max-content;
+  margin-top: 1em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+ }
+
+ label label off {
+  display: inline;
+ }
+
+ label label on {
+  display: inline;
+ }
+
+ label label switch{
+  display: inline-flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: max-content;
+  height: 1em;
+ }
+
+ label label switch * {
+  transform: translateY(0%);
+  transition: .4s;
+ }
+
+
+input[value="lightDark"]:checked ~ label switch * {
+  transform: translateY(-100%);
+}
+
+
+span {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  inset: 0;
+  border-radius: 1em;
+  cursor: pointer;
+  background-color: var(--acent-clr);
+  transition: .4s;
+  box-shadow: 0px 0px 10px 0px rgba(var(--shadow-clr), var(--shadow-opacity));
+
+}
+
+span:before {
+  position: absolute;
+  content: "";
+  height: 1em;
+  width: 1em;
+  left: .2em;
+  background-color: var(--bg-clr);
+  transition: .4s;
+  border-radius: 1em;
+}
+
+input:checked + span {
+  background-color: var(--primary-clr);
+}
+
+input:checked + span:before {
+  transform: translateX(1em);
+}
+
+
+
+
+
+
+
